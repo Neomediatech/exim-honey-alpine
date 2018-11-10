@@ -1,0 +1,3 @@
+accept
+	#recipients = CONFDIR/blackhole_recipients
+        set acl_m_drop = 1
