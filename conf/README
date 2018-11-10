@@ -1,1 +1,17 @@
-Due to heavy and sensitive configuration settings, this folder is empty, for now (10 november 2018).
+Due to heavy and sensitive configuration settings, this folder does not contains every configurations files, for now (10 november 2018).  
+
+List of files needed for this image working:  
+
+- acl_check_data  
+- acl_check_rcpt  
+- acl_smtp_connect  
+- exim.conf  
+- exim.filter  
+- update-exim4.conf.conf  
+- acl_check_quit  
+- acl_smtp_auth  
+- blackhole_recipients  
+- exim.conf.localmacros  
+- exim.crt  
+- exim.key  
+
