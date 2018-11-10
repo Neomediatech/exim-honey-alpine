@@ -1,0 +1,22 @@
+########################################################################
+#
+# Add Message-ID if missing
+#
+########################################################################
+
+warn
+    condition = ${if !def:h_Message-ID: {1}}
+    message = Message-ID: <E$message_id@$primary_hostname>
+
+warn
+    condition = ${if def:acl_m_drop}
+    logwrite  = HOST=$sender_host_address, FROM=$sender_address <$return_path>, TO=$recipients, SUBJECT=$h_subject:, REASON=HONEYPOT SERVER
+
+warn
+    spam = mail:true
+    logwrite = RSPAMD SCORE: $spam_score ($spam_bar). Action: $spam_action
+    logwrite = $spam_report
+    set acl_m_rspamd_score_int = $spam_score_int
+
+accept
+
