@@ -12,7 +12,7 @@ RUN chmod +x /init.sh
 COPY conf/* /etc/exim/
 
 RUN openssl req -new -x509 -nodes -days 3650 -config /config-ssl.cnf -out /etc/exim/exim.crt -keyout /etc/exim/exim.key ; \
-    chmod 0600 /etc/exim/exim.key
+    chmod 0600 /etc/exim/exim.key ; chown exim:exim /etc/exim/exim.key
 
 EXPOSE 25 465 587
 
