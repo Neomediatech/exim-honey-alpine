@@ -1,13 +1,17 @@
 dnslists_cbl:
-  warn
-        dnslists                  = cbl.abuseat.org
-        set acl_m_myhostname      = ${lookup dnsdb{ptr=$received_ip_address}{$value}{$primary_hostname}}
+warn
+        !hosts    = 127.0.0.1
+        logwrite  = ABUSEAT CHECK:   [$sender_host_address]
+
+warn
+        !hosts                      = 127.0.0.1
+        dnslists                    = cbl.abuseat.org
+        set acl_m_dnslist_cbl_found = 1
+        set acl_m_cbl_msg           = $dnslist_text
+        set acl_m_cbl_redis_found   = 1
+        set acl_m_cbl_insert_redis  = 1
         logwrite  = ---------------------------------------------------------
         logwrite  = WARNING: [$sender_host_address] found in $dnslist_domain ($dnslist_text). DEFERRED
         logwrite  = ---------------------------------------------------------
-        set acl_m_dnslist_found = 1
-  defer
-        condition = ${if def:acl_m_dnslist_found {true}{false}}
-        message   = $dnslist_text
 
   accept
