@@ -1,9 +1,9 @@
 dnslists_cbl:
-warn
+  warn
         !hosts    = 127.0.0.1
         logwrite  = ABUSEAT CHECK:   [$sender_host_address]
 
-warn
+  warn
         !hosts                      = 127.0.0.1
         dnslists                    = cbl.abuseat.org
         set acl_m_dnslist_cbl_found = 1
