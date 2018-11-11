@@ -8,8 +8,6 @@ warn
         dnslists                    = cbl.abuseat.org
         set acl_m_dnslist_cbl_found = 1
         set acl_m_cbl_msg           = $dnslist_text
-        set acl_m_cbl_redis_found   = 1
-        set acl_m_cbl_insert_redis  = 1
         logwrite  = ---------------------------------------------------------
         logwrite  = WARNING: [$sender_host_address] found in $dnslist_domain ($dnslist_text). DEFERRED
         logwrite  = ---------------------------------------------------------
