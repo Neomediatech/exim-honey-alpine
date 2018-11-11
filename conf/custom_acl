@@ -2,10 +2,8 @@ dnslists_cbl:
   warn
         dnslists                  = cbl.abuseat.org
         set acl_m_myhostname      = ${lookup dnsdb{ptr=$received_ip_address}{$value}{$primary_hostname}}
-        condition  = ${run{/usr/bin/redis-cli -h REDIS_DC_HOST -p REDIS_DC_PORT SET cbl:$sender_host_address "From:${acl_m_myhostname}" EX 3600}{true}{true}}
-        set acl_m_cbl_redis_found = 1
         logwrite  = ---------------------------------------------------------
-        logwrite  = DNSBL CBL: [$sender_host_address] presente in $dnslist_domain ($dnslist_text). RIMBALZATO - $acl_c_randstring
+        logwrite  = WARNING: [$sender_host_address] found in $dnslist_domain ($dnslist_text). DEFERRED - $acl_c_randstring
         logwrite  = REDIS CBL: [$sender_host_address] inserito in REDIS
         logwrite  = ---------------------------------------------------------
   defer
