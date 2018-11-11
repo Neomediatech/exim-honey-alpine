@@ -1,9 +1,6 @@
-Due to heavy and sensitive configuration settings, this folder does not contains every configurations files, for now (10 november 2018).  
+You can put your custom acl in custom_acl file (or map it as volume with -v /host/file/path:/etc/exim/custom_acl:ro)
 
-List of files needed for this image working and missing:  
+List of files needed for this image working and missing (for now 11 nov 2018):  
 
 - update-exim4.conf.conf  
 - exim.conf.localmacros  
-- exim.crt  
-- exim.key  
-
