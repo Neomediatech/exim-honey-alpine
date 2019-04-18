@@ -1,5 +1,6 @@
 warn
 	logwrite = START SESSION:   incoming connection from $sender_fullhost
+        control = allow_auth_unadvertised
 
 #require
 #        acl = dnslists_cbl
