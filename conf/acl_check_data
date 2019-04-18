@@ -15,5 +15,8 @@ warn
     logwrite = $spam_report
     set acl_m_rspamd_score_int = $spam_score_int
 
-accept
+# no matter if email is good or bad, we are a honeypot and no real delivery will happen
+warn
+    control   = fakereject/Sorry, unable to relay. Please try to send later.
 
+accept
