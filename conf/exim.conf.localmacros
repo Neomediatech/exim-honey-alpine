@@ -8,7 +8,7 @@ MAIN_TLS_PRIVATEKEY   = CONFDIR/exim.key
 MAIN_TLS_CERTIFICATE  = CONFDIR/exim.crt
 acl_smtp_quit         = CONFDIR/acl_check_quit
 acl_smtp_connect      = CONFDIR/acl_smtp_connect
-smtp_banner           = 220 ESMTP MAIL service ready at $tod_full
+smtp_banner           = ESMTP MAIL service ready at $tod_full
 disable_ipv6          = true
 auth_advertise_hosts  = *
 tls_on_connect_ports  = 465
@@ -28,4 +28,3 @@ MAIN_LOG_SELECTOR = -retry_defer -skip_delivery -host_lookup_failed \
                   +incoming_interface +tls_sni -rejected_header
 
 system_filter_directory_transport = local_copy
-
