@@ -1,3 +1,8 @@
+[![](https://images.microbadger.com/badges/version/neomediatech/exim-honey-alpine.svg)](https://microbadger.com/images/neomediatech/exim-honey-alpine "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/neomediatech/exim-honey-alpine.svg)](https://microbadger.com/images/neomediatech/exim-honey-alpine)
+![](https://img.shields.io/github/last-commit/Neomediatech/exim-honey-alpine.svg?style=plastic)
+![](https://img.shields.io/github/repo-size/Neomediatech/exim-honey-alpine.svg?style=plastic)
+
 # exim-honey-alpine
 Dockerized version of exim as honeypot service, based on Alpine Linux
 
