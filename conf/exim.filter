@@ -5,7 +5,7 @@ if first_delivery then
 # if the email has spam score below 100 (10.0) then we keep it for subsequent analysis, manual or throught other systems
 	if "${if def:acl_m_drop {1}{0}}" is "1" then
                 if $acl_m_rspamd_score_int is below 100 then
-                      save /tmp/mail/ 0666
+                      save /data/mail/ 0666
                 endif
 		seen
 		finish
