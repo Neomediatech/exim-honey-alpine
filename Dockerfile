@@ -1,9 +1,12 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
-ENV EXIM_VERSION=4.92-r0
+ENV EXIM_VERSION=4.92.1-r0
+ENV BUILD_DATE=2019-07-29
+ENV ALPINE_VERSION=3.10
 
 LABEL maintainer="docker-dario@neomediatech.it" \ 
-      org.label-schema.version=$EXIM__VERSION \
+      org.label-schema.version=$EXIM_VERSION \
+      org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-type=Git \
       org.label-schema.vcs-url=https://github.com/Neomediatech/exim-honey-alpine \
       org.label-schema.maintainer=Neomediatech
